@@ -1,1 +1,1 @@
-let () = Aoc2024.Day1.solve 2
+let () = Aoc2024.Day2.solve 2
