@@ -75,6 +75,5 @@ assert(
 
 IO.puts("Ok")
 
-input = Utils.read_stream("day1.in")
 result = Day1.solve2(input)
 IO.puts("Result pt2: #{result}")
