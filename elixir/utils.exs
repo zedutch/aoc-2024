@@ -21,4 +21,19 @@ defmodule Utils do
     File.stream!(f)
     |> Stream.map(&String.trim_trailing/1)
   end
+
+  def pairwise_unique(list) do
+    for x <- list do
+      for y <- Enum.take(list, -(length(list) - 1)) do
+        {x, y}
+      end
+    end
+    |> List.flatten()
+    |> Enum.filter(fn {p1, p2} -> p1 != p2 end)
+    |> Enum.map(fn {p1, p2} ->
+      [q1, q2] = Enum.sort([p1, p2])
+      {q1, q2}
+    end)
+    |> Enum.uniq()
+  end
 end
